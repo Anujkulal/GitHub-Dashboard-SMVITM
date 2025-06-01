@@ -71,9 +71,9 @@ const deleteStudentDetails = async (req, res) => {
 const getGithubDetails = async (req, res) => {
     try{
         const students = await StudentModel.find({});
-        if(students.length === 0){
-            return res.status(404).json({message: "No students found"});
-        }
+        // if(students.length === 0){
+        //     return res.status(404).json({message: "No students found"});
+        // }
         return res.status(200).json(students);
     }
     catch(error){

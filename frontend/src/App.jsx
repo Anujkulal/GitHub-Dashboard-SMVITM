@@ -11,17 +11,7 @@ import { useStore } from "./zustand/store";
 import Signin from "./components/feature/Signin";
 
 function App() {
-  // const [topContributors, setTopContributors] = useState([]);
-  // const [inactive, setInactive] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:5000/api/report/top-contributors')
-  //     .then(res => setTopContributors(res.data));
-  //   axios.get('http://localhost:5000/api/report/inactive')
-  //     .then(res => setInactive(res.data));
-  // }, []);
-
-  const { showSignin, checkAuth } = useStore();
+   const { showSignin, checkAuth } = useStore();
 
   useEffect(() => {
     checkAuth();

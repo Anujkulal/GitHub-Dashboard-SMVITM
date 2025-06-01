@@ -73,6 +73,13 @@ export default function ReportDashboard() {
     axios.get(`${base_backend_url}/api/students`).then(async (res) => {
       const students = res.data;
 
+      if (!students || students.length === 0) {
+      setTopContributors([]);
+      setInactiveStudents([]);
+      setLoading(false);
+      return;
+    }
+
       // For each student, fetch GitHub data and calculate metrics
       const enriched = await Promise.all(
         students.map(async (student) => {
@@ -165,7 +172,10 @@ export default function ReportDashboard() {
           </h2>
           {loading ? (
             <div className="text-center text-gray-400">Loading...</div>
-          ) : (
+          ) : topContributors.length === 0 ? (
+    <div className="text-center text-gray-400">No students found.</div>
+  ):
+           (
             <ul className="space-y-3">
               {topContributors.map((student, index) => (
                 <li
