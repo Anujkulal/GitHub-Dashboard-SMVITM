@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/Input";
 import { useStore } from "@/zustand/store";
 import axios from "axios";
 
+const base_backend_url = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+
 const DetailsCard = ({ user }) => {
   const { setShowPopup } = useStore();
 
@@ -18,7 +20,7 @@ const DetailsCard = ({ user }) => {
   const handleSaveDetails = async () => {
     // Logic to save details goes here
     try {
-      await axios.post("http://localhost:5000/api/students/add", {
+      await axios.post(`${base_backend_url}/api/students/add`, {
         githubId: user.id,
         name: inputvalues.name,
         githubUsername: user.login,

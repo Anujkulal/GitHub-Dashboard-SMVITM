@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import LandingPage from "./screens/LandingPage";
 import ReportDashboard from "./screens/ReportDashboard";
 import Header from "@/components/ui/Header";

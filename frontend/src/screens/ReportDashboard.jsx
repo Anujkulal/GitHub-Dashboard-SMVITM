@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import Image from "@/components/ui/Image";
 import githubApi from "@/services/githubApi.js";
-import { useStore } from "../zustand/store";
-import { Button } from "../components/ui/Button";
+import { useStore } from "@/zustand/store";
+import { Button } from "@/components/ui/Button";
 import { MdDelete } from "react-icons/md";
 
 const base_backend_url =
@@ -184,7 +184,7 @@ export default function ReportDashboard() {
                 >
                   <div className="flex gap-4 flex-wrap">
                     <Image size="small" src={student.avatar_url} alt="image" />
-                    <div>
+                    <div className="">
                       <p className="font-medium text-white w-30">
                         {student.name}
                       </p>

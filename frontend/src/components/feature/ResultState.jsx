@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from "framer-motion";
-import { useStore } from '../../zustand/store';
+import { useStore } from '@/zustand/store';
 import ProfileList from './ProfileList';
 import ProfileCard from './ProfileCard';
 
@@ -53,12 +53,7 @@ const ResultState = () => {
                     <div key={index} className={`${openIndex === index ? "bg-gray-800" : "bg-gray-900"} p-4 rounded-lg shadow-md transition-all duration-300`}>
                         <div className="flex items-center justify-center gap-2">
                             <ProfileList user={user} index={index} openIndex={openIndex} setOpenIndex={setOpenIndex} />
-                            {/* <button
-                                className="ml-2 px-3 py-1 bg-blue-600 text-white rounded"
-                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                            >
-                                {openIndex === index ? "Hide Details" : "Show Details"}
-                            </button> */}
+                            
                         </div>
                         {openIndex === index && (
                             <div className="mt-2">

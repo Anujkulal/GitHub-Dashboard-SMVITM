@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
-import { useStore } from "../../zustand/store";
+import { Input } from "@/components/ui/Input";
+import { Button } from "@/components/ui/Button";
+import { useStore } from "@/zustand/store";
 
 const SearchState = () => {
   const { searchGitHubUsers, loading } = useStore();
